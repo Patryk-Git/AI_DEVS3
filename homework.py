@@ -16,7 +16,7 @@ class Homework:
         return requests.get(url).text
 
     @staticmethod
-    def post(data: dict, url: str) -> str:
+    def post(data: dict, url: str):
         """
         Sends a POST request with the given data to the specified URL and returns the response text.
 
@@ -27,4 +27,5 @@ class Homework:
         Returns:
             str: The response text from the POST request.
         """
-        return requests.post(url, json=data).text
+        response = requests.post(url, json=data)
+        print(response.text)
